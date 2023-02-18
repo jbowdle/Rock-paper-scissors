@@ -1,3 +1,14 @@
+const playerDisplay = document.querySelector("#player-choice");
+const compDisplay = document.querySelector("#computer-choice");
+const buttonRock = document.querySelector("#rock");
+const buttonPaper = document.querySelector("#paper");
+const buttonScissors = document.querySelector("#scissors");
+const buttonShoot = document.querySelector("#shoot");
+const winDisplay = document.querySelector("#win-display");
+const lossDisplay = document.querySelector("#loss-display");
+const tieDisplay = document.querySelector("#tie-display");
+const result = document.querySelector("#status");
+
 function randomNum(max) {
     return Math.floor(Math.random() * max);
 }
@@ -10,43 +21,52 @@ let stats = {
 
 let options = ["rock", "paper", "scissors"];
 
+let choice;
+
+buttonRock.addEventListener(
+    "click",
+    (e) => (choice = "rock")
+)
+
+buttonPaper.addEventListener(
+    "click",
+    (e) => (choice = "paper")
+)
+
+buttonScissors.addEventListener(
+    "click",
+    (e) => (choice = "scissors")
+)
+
 const gameLoop = function() {
     let compChoice = options[randomNum(3)];
-    let choice; 
-    
-    choice = window.prompt("Please choose a value and enter exactly as written: rock, paper, scissors");
 
-    if (choice != "rock" &&
-        choice != "paper" &&
-        choice != "scissors") {
-        window.alert("You entered an incorrect value.");
-        gameLoop();
-    }
+    compDisplay.textContent = `Chose: ${compChoice}`;
+    playerDisplay.textContent = `Chose: ${choice}`;
     
     if (choice === compChoice) {
-        window.alert(`You chose ${choice}. The computer chose ${compChoice}. You tie.`);
         stats.ties++;
+        tieDisplay.textContent = `Ties: ${stats.ties}`;
+        result.textContent = "Tie";
     } else if ((choice === "rock" && compChoice === "scissors") ||
         (choice === "paper" && compChoice === "rock") ||
         (choice === "scissors" && compChoice === "paper")) {
-        window.alert(`You chose ${choice}. The computer chose ${compChoice}. You win.`);
         stats.wins++;
+        winDisplay.textContent = `Wins: ${stats.wins}`;
+        result.textContent = "Win";
     } else {
-        window.alert(`You chose ${choice}. The computer chose ${compChoice}. You lose.`);
-        stats.losses++;    
+        stats.losses++;  
+        lossDisplay.textContent = `Losses: ${stats.losses}`; 
+        result.textContent = "Loss"; 
     }
 
-    window.alert(`stats:
-    wins: ${stats.wins}
-    losses: ${stats.losses}
-    ties: ${stats.ties}`);
-
-    if (window.confirm("Play again?")) {
-        gameLoop();
-    } else {
-        return;
-    }
+    
+    
+    
 
 }
 
-gameLoop();
+buttonShoot.addEventListener(
+    'click',
+    (e) => (gameLoop())
+) 
