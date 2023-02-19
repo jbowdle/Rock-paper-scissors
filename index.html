@@ -13,31 +13,42 @@
         <h1>Rock Paper Scissors</h1>
     </header>
     <main>
-        <div>
-            <button id="rock">Rock</button>
-            <button id="paper">Paper</button>
-            <button id="scissors">Scissors</button>
-            <button id="shoot">Shoot!</button>
+        <div id="buttons">
+            
+                <button id="rock">Rock</button>
+                <button id="paper">Paper</button>
+                <button id="scissors">Scissors</button>
+            
+            
+                <button id="shoot">Shoot!</button>
+            
         </div>
-        <div>
-            <h2>Player</h2>
-            <p  id="player-choice">Chose:</p>
+        <div id="court">
+            <div id="player-side" class="half-court">
+                <h2>Player</h2>
+                <img id="player-img" src="">
+                <p  id="player-choice">Chose:</p>
+            </div>
+            <div id="comp-side" class="half-court">
+                <h2>Computer</h2>
+                <img id="comp-img" href="">
+                <p id="computer-choice">Chose:</p>
+            </div>
         </div>
-        <div>
-            <h2>Computer</h2>
-            <p id="computer-choice">Chose:</p>
-        </div>
-        <div>
+        <div id="status-div">
             <p id="status"></p>
+        </div>
+        <div id="stats">
+            <ul>
+                <li id="win-display">Wins: 0</li>
+                <li id="loss-display">Losses: 0</li>
+                <li id="tie-display">Ties: 0</li>
+            </ul>
+            <button>Reset</button>
         </div>
     </main>
     <footer>
-        <h3>Stats</h3>
-        <ul>
-            <li id="win-display">Wins: 0</li>
-            <li id="loss-display">Losses: 0</li>
-            <li id="tie-display">Ties: 0</li>
-        </ul>
+        <a href="https://www.vecteezy.com/free-vector/rock-paper-scissors">Rock Paper Scissors Vectors by Vecteezy</a>
     </footer>
     <script src="./assets/main.js"></script>
 </body>

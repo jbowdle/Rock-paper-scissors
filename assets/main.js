@@ -8,6 +8,8 @@ const winDisplay = document.querySelector("#win-display");
 const lossDisplay = document.querySelector("#loss-display");
 const tieDisplay = document.querySelector("#tie-display");
 const result = document.querySelector("#status");
+const playerImg = document.querySelector("#player-img");
+const compImg = document.querySelector("#comp-img");
 
 function randomNum(max) {
     return Math.floor(Math.random() * max);
@@ -25,17 +27,26 @@ let choice;
 
 buttonRock.addEventListener(
     "click",
-    (e) => (choice = "rock")
+    function () {
+        choice = "rock";
+        playerImg.setAttribute("src", "./assets/rock.png");
+    }
 )
 
 buttonPaper.addEventListener(
     "click",
-    (e) => (choice = "paper")
+    function () {
+        choice = "paper";
+        playerImg.setAttribute("src", "./assets/paper.png");
+    }
 )
 
 buttonScissors.addEventListener(
     "click",
-    (e) => (choice = "scissors")
+    function () {
+        choice = "scissors";
+        playerImg.setAttribute("src", "./assets/scissors.png");
+    }
 )
 
 const gameLoop = function() {

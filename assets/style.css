@@ -1,0 +1,89 @@
+/* Color storage */
+:root {
+    --bg-color: rgb(233, 212, 189);
+    --border-color: rgb(159, 96, 23);
+    --button-color: rgb(202, 191, 177);
+    --button-highlight: rgba(255, 146, 3, 0.374);
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: var(--bg-color);
+}
+
+h1 {
+    text-align: center;
+    margin-top: 3%;
+    font-size: 210%;
+}
+
+main {
+    display: grid;
+    grid-template-rows: 1fr 3fr 1fr 1fr;
+    margin: 5% 2%;
+}
+
+#buttons {
+    border: 3px solid var(--border-color);
+    border-radius: 10px;
+    margin-bottom: 2px;
+    display: grid;
+    grid-template-areas:
+        "rock paper scissors"
+        "shoot shoot shoot";
+    background-color: var(--button-color);
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+#buttons button:hover {
+    background-color: var(--button-highlight);
+    transition: all 0.2s ease-in-out;
+}
+
+#rock {
+    grid-area: rock;
+}
+
+#paper {
+    grid-area: paper;
+}
+
+#scissors {
+    grid-area: scissors;
+}
+
+#shoot {
+    grid-area: shoot;
+}
+
+#court {
+    display: flex;
+    justify-content: center;
+    margin: 2px 0px;
+}
+
+.half-court {
+    border: 3px solid var(--border-color);
+    border-radius: 10px;
+    display: flex;
+    flex-basis: 50%;
+    flex-wrap: wrap;
+    text-align: center;
+    margin: 0px 2px;
+}
+
+.half-court h2,
+.half-court p {
+    width: 100%;
+}
+
+#status-div {
+    border: 3px solid var(--border-color);
+    border-radius: 10px;
+}
+
+#stats {
+   border: 3px solid var(--border-color);
+   border-radius: 10px;
+   margin: 2px 0px;
+}
