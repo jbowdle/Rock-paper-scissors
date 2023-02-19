@@ -14,16 +14,15 @@
     </header>
     <main>
         <div id="buttons">
-            
+                <!-- Player choices -->
                 <button id="rock">Rock</button>
                 <button id="paper">Paper</button>
                 <button id="scissors">Scissors</button>
-            
-            
-                <button id="shoot">Shoot!</button>
-            
+                <!-- This button will trigger the comp to choose -->
+                <button id="shoot">Shoot!</button>  
         </div>
         <div id="court">
+            <!-- Player and comp choices are displayed here in there respective halfcourts -->
             <div id="player-side" class="half-court">
                 <h2>Player</h2>
                 <img id="player-img" src="./assets/blank.png">
@@ -36,9 +35,11 @@
             </div>
         </div>
         <div id="status-div">
+            <!-- Displays whether the player won, lost, or tied -->
             <p id="status"></p>
         </div>
         <div id="stats">
+            <!-- Displays stats and holds the reset button -->
             <ul>
                 <li id="win-display">Wins: 0</li>
                 <li id="loss-display">Losses: 0</li>
@@ -48,6 +49,7 @@
         </div>
     </main>
     <footer>
+        <!-- Credits -->
         <a href="https://www.vecteezy.com/free-vector/rock-paper-scissors">Rock Paper Scissors Vectors by Vecteezy</a>
     </footer>
     <script src="./assets/main.js"></script>

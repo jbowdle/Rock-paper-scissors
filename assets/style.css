@@ -42,9 +42,17 @@ main {
     grid-template-columns: 1fr 1fr 1fr;
 }
 
-#buttons button:hover {
+button:hover {
     background-color: var(--button-highlight);
     transition: all 0.2s ease-in-out;
+}
+
+/* 
+Works with main.js
+When the choice buttons are clicked, they will remain highlighted until another is clicked.
+ */
+.highlight-button {
+    background-color: var(--button-highlight);
 }
 
 #rock {
@@ -63,12 +71,14 @@ main {
     grid-area: shoot;
 }
 
+/* This area displays what the player and computer chose */
 #court {
     display: flex;
     justify-content: center;
     margin: 2px 0px;
 }
 
+/* The court is divided into two half courts, player on left and computer on right */
 .half-court {
     border: 3px solid var(--border-color);
     border-radius: 10px;
@@ -84,6 +94,7 @@ main {
     width: 100%;
 }
 
+/* status-div displays whether the player won, lost, or tied */
 #status-div {
     border: 3px solid var(--border-color);
     border-radius: 10px;
@@ -121,9 +132,10 @@ main {
 }
 
 #stats ul {
-    margin: 1%;
+    margin: 2%;
 }
 
+/* Reset button */
 #stats button {
     position: absolute;
     bottom: 5px;
