@@ -4,6 +4,9 @@
     --border-color: rgb(159, 96, 23);
     --button-color: rgb(202, 191, 177);
     --button-highlight: rgba(255, 146, 3, 0.374);
+    --win-color: rgb(114, 245, 116);
+    --loss-color: rgb(255, 85, 85);
+    --tie-color: rgba(193, 193, 193);
 }
 
 body {
@@ -15,6 +18,10 @@ h1 {
     text-align: center;
     margin-top: 3%;
     font-size: 210%;
+}
+
+img {
+    max-width: 100%;
 }
 
 main {
@@ -80,10 +87,52 @@ main {
 #status-div {
     border: 3px solid var(--border-color);
     border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#status {
+    font-size: 250%;
+    text-align: center;
+}
+
+.status-win {
+    background-color: var(--win-color);
+}
+
+.status-loss {
+    background-color: var(--loss-color);    
+}
+
+.status-tie {
+    background-color: var(--tie-color);    
+}
+
+.status-reset {
+    background-color: rgba(0, 0, 0, 0);
 }
 
 #stats {
    border: 3px solid var(--border-color);
    border-radius: 10px;
    margin: 2px 0px;
+   position: relative;
+}
+
+#stats ul {
+    margin: 1%;
+}
+
+#stats button {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    background-color: var(--button-color);
+    border-radius: 5px;
+    padding: 3px;
+}
+
+footer {
+    text-align: center;
 }
