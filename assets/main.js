@@ -1,3 +1,5 @@
+/* TODO: Add 'hit' animation on statusDiv change */
+
 // selects elements from the HTML
 // I hope there's a better way to do this
 const playerDisplay = document.querySelector("#player-choice");
@@ -109,12 +111,7 @@ const gameLoop = function() {
         statusDiv.setAttribute("class", "status-loss");
         lossDisplay.textContent = `Losses: ${stats.losses}`; 
         result.textContent = "Loss"; 
-    }
-
-    
-    
-    
-
+    }  
 }
 
 // Clicking "Shoot!" button will trigger the computer to choose

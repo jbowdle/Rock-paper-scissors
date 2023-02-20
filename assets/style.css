@@ -1,9 +1,15 @@
+/* TODO: Add 'hit' animation on statusDiv change */
+/* TODO: Change statusDiv to accept bg-color2 without breaking styling */
+/* TODO: Figure out way to make linear gradient accept transition rules */
+
 /* Color storage */
 :root {
     --bg-color: rgb(233, 212, 189);
+    --bg-color2: rgb(248, 202, 152);
     --border-color: rgb(159, 96, 23);
     --button-color: rgb(202, 191, 177);
     --button-highlight: rgba(255, 146, 3, 0.374);
+    --accent-color: rgb(255, 218, 35);
     --win-color: rgb(114, 245, 116);
     --loss-color: rgb(255, 85, 85);
     --tie-color: rgba(193, 193, 193);
@@ -46,8 +52,9 @@ main {
 }
 
 button:hover {
+    background: linear-gradient(var(--accent-color) 0%, var(--button-highlight) 30%);
     background-color: var(--button-highlight);
-    transition: all 0.2s ease-in-out;
+    transition: all 1s ease-in-out;
 }
 
 /* 
@@ -84,6 +91,7 @@ When the choice buttons are clicked, they will remain highlighted until another 
 /* The court is divided into two half courts, player on left and computer on right */
 .half-court {
     border: 3px solid var(--border-color);
+    background-color: var(--bg-color2);
     border-radius: 10px;
     display: flex;
     flex-basis: 50%;
@@ -123,20 +131,21 @@ When the choice buttons are clicked, they will remain highlighted until another 
 }
 
 .status-loss {
-    background-color: var(--loss-color);    
+    background-color: var(--loss-color);  
 }
 
 .status-tie {
-    background-color: var(--tie-color);    
+    background-color: var(--tie-color);
 }
 
 .status-reset {
-    background-color: rgba(0, 0, 0, 0);
+    background-color: rgba(255, 255, 255, 0);
 }
 
 #stats {
    border: 3px solid var(--border-color);
    border-radius: 10px;
+   background-color: var(--bg-color2);
    margin: 2px 0px;
    position: relative;
 }
